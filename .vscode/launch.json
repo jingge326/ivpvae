@@ -1,0 +1,104 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "P12-Extrap-ODE",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "--random-state",
+                "1",
+                "--ml-task",
+                "extrap",
+                "--ivp-solver",
+                "ode",
+                "--combine-methods",
+                "kl_weighted",
+                "--data",
+                "p12",
+                "--time-scale",
+                "constant",
+                "--time-max",
+                "2880"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "P12-Extrap-Flow",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "--random-state",
+                "1",
+                "--ml-task",
+                "extrap",
+                "--ivp-solver",
+                "resnetflow",
+                "--combine-methods",
+                "kl_weighted",
+                "--data",
+                "p12",
+                "--time-scale",
+                "constant",
+                "--time-max",
+                "2880"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "P12-BiClass-ODE",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "--random-state",
+                "1",
+                "--ml-task",
+                "biclass",
+                "--ivp-solver",
+                "ode",
+                "--data",
+                "p12",
+                "--time-max",
+                "1439",
+                "--ratio-ce",
+                "100"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "P12-BiClass-Flow",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "--random-state",
+                "1",
+                "--ml-task",
+                "biclass",
+                "--ivp-solver",
+                "resnetflow",
+                "--data",
+                "p12",
+                "--time-max",
+                "1439",
+                "--ratio-ce",
+                "100"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}
