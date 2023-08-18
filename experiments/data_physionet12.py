@@ -16,10 +16,10 @@ def download_and_process_p12(path_p12):
     outcome_urls = [
         'https://physionet.org/files/challenge-2012/1.0.0/Outcomes-a.txt']
     params = [
-        'Age', 'Gender', 'Height', 'ICUType', 'Weight', 'Albumin', 'ALP', 'ALT', 'AST', 'Bilirubin', 'BUN',
-        'Cholesterol', 'Creatinine', 'DiasABP', 'FiO2', 'GCS', 'Glucose', 'HCO3', 'HCT', 'HR', 'K', 'Lactate', 'Mg',
-        'MAP', 'MechVent', 'Na', 'NIDiasABP', 'NIMAP', 'NISysABP', 'PaCO2', 'PaO2', 'pH', 'Platelets', 'RespRate',
-        'SaO2', 'SysABP', 'Temp', 'TroponinI', 'TroponinT', 'Urine', 'WBC']
+        'Albumin', 'ALP', 'ALT', 'AST', 'Bilirubin', 'BUN', 'Cholesterol', 'Creatinine', 'DiasABP',
+        'FiO2', 'GCS', 'Glucose', 'HCO3', 'HCT', 'HR', 'K', 'Lactate', 'Mg', 'MAP', 'MechVent',
+        'Na', 'NIDiasABP', 'NIMAP', 'NISysABP', 'PaCO2', 'PaO2', 'pH', 'Platelets', 'RespRate',
+        'SaO2', 'SysABP', 'Temp', 'TroponinI', 'TroponinT', 'Urine', 'WBC', 'Weight']
     params_dict = {k: i for i, k in enumerate(params)}
 
     raw_folder = path_p12/"raw"
@@ -90,9 +90,6 @@ def download_and_process_p12(path_p12):
                             list_vals[-1][params_dict[param]] = float(val)
                         list_masks[-1][params_dict[param]] = 1
                         num_obs[-1][params_dict[param]] += 1
-                    else:
-                        assert param == 'RecordID', 'Unexpected param {}'.format(
-                            param)
 
         arr_values = np.stack(list_vals, axis=0)
         arr_masks = np.stack(list_masks, axis=0)

@@ -36,14 +36,11 @@ parser.add_argument("--log-tool", default="logging",
                     choices=["logging", "wandb"])
 
 # Args for datasets
-parser.add_argument("--data", default="m4_mortality_100", help="Dataset name",
-                    choices=["m4_full", "p12", "eicu", "m4_mortality_100", "m4_mortality_250",
-                             "m4_mortality_500", "m4_mortality_1000", "m4_mortality_2000",
-                             "m4_mortality_3000", "m4_next", "m4_next_100", "m4_next_250",
-                             "m4_next_500", "m4_next_1000", "m4_next_2000", "m4_next_3000"])
+parser.add_argument("--data", default="p12", help="Dataset name",
+                    choices=["m4_full", "p12", "eicu"])
 parser.add_argument("--num-samples", type=int, default=-1)
 parser.add_argument("--variable-num", type=int,
-                    default=41, choices=[96, 41, 14])
+                    default=37, choices=[96, 37, 41, 14])
 parser.add_argument("--ts-full", action='store_true')
 parser.add_argument("--del-std5", action='store_true')
 parser.add_argument("--time-scale", default="time_max",
@@ -118,12 +115,9 @@ if __name__ == "__main__":
     else:
         raise ValueError("Unknown")
 
-    # try:
-    #     experiment.run()
-    #     experiment.finish()
-    # except Exception:
-    #     with open(experiment.proj_path/"log"/"err_{}.log".format(experiment.args.exp_name), "w") as fout:
-    #         print(traceback.format_exc(), file=fout)
-
-    experiment.run()
-    experiment.finish()
+    try:
+        experiment.run()
+        experiment.finish()
+    except Exception:
+        with open(experiment.proj_path/"log"/"err_{}.log".format(experiment.args.exp_name), "w") as fout:
+            print(traceback.format_exc(), file=fout)
