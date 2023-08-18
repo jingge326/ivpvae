@@ -1,6 +1,6 @@
 # IVP-VAE: Modeling EHR Time Series with Initial Value Problem Solvers
 
-#### Authors: Jingge Xiao, Leonie Basso, Wolfgang Nejdl, Niloy Ganguly, Sandipan Sikdar
+#### Authors: Anonymous
 
 ## Overview
 
