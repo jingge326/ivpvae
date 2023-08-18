@@ -8,7 +8,7 @@ This repository contains data preprocessing programs and model source code for m
 
 <!-- ![IVP-VAE idea] -->
 <p align="center">
-    <img src="images/ivpvae.png" width="600" align="center">
+    <img src="images/ivpvae.png" width="700" align="center">
 </p>
 
 - We propose a novel continuous-time model IVP-VAE which can capture sequential patterns of EHR time series by purely solving multiple IVPs in parallel.
