@@ -1,10 +1,9 @@
 # IVP-VAE: Modeling EHR Time Series with Initial Value Problem Solvers
 
-#### Authors: Anonymous
-
 ## Overview
+This is the official PyTorch implementation of the AAAI 2024 paper *IVP-VAE: Modeling EHR Time Series with Initial Value Problem Solvers*.
 
-This repository contains data preprocessing programs and model source code for manuscript *IVP-VAE: Modeling EHR Time Series with Initial Value Problem Solvers*.
+This repository contains model source code and data preprocessing programs.
 
 <!-- ![IVP-VAE idea] -->
 <p align="center">
