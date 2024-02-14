@@ -1,15 +1,28 @@
 # IVP-VAE: Modeling EHR Time Series with Initial Value Problem Solvers
 
 ## Overview
-This is the official PyTorch implementation of the AAAI 2024 paper *IVP-VAE: Modeling EHR Time Series with Initial Value Problem Solvers*.
+This is the official PyTorch implementation of the **AAAI 2024** paper *IVP-VAE: Modeling EHR Time Series with Initial Value Problem Solvers*.
+
+---
+Relevant resources:
+
+Full paper: https://arxiv.org/abs/2305.06741
+
+Presentation Recording: https://www.youtube.com/watch?v=JReUWXgAsLQ
+
+Slides: https://drive.google.com/file/d/1yuUIPIfL2ZFinb-_4abRYdyW8jfLcON3
+
+---
 
 This repository contains model source code and data preprocessing programs.
 
-<!-- ![IVP-VAE idea] -->
+Electronic Health Record (EHR) data contains multi-variate time series of patient information, such as vital signs and laboratory results. EHR time series is often irregularly sampled (i.e., unequal time intervals between successive measurements) and can have missing values. The irregularity is caused mainly due to unstructured manual processes, event-driven recordings, device failure, and also different sampling frequencies across multiple variables. These complexities make learning and modeling clinical time series data particularly challenging for classical machine learning models.
+<!-- ![EHR Time Series Example] -->
 <p align="center">
-    <img src="images/ivpvae.png" width="700" align="center">
+    <img src="images/ehr_time_series_3204477.png" width="500" align="center">
 </p>
 
+In this work,
 - We propose a novel continuous-time model IVP-VAE which can capture sequential patterns of EHR time series by purely solving multiple IVPs in parallel.
 
 - By utilizing the invertibility property of IVP solvers, we achieve parameter sharing between encoder and decoder of the VAE architecture, and thus provide a more efficient generative modeling
@@ -18,6 +31,11 @@ technique.
 - Across real-world datasets on both forecast and classification tasks, IVP-VAE achieves comparable results while significantly increasing efficiency.
 
 - IVP-VAE achieves significant improvements over baseline models in settings where the training data is limited.
+
+<!-- ![IVP-VAE idea] -->
+<p align="center">
+    <img src="images/ivpvae.png" width="700" align="center">
+</p>
 
 
 ## Requirements
